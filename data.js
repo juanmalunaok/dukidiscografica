@@ -248,6 +248,8 @@ const DUKI_DATA = [
   { id: 222, year: 2025, date: '2025-07-07', title: 'NO ME ALCANZA', type: 'album', album: '5202', collabs: [], trackNum: 11 },
   // 2026
   { id: 223, year: 2026, date: '2026-04-13', title: 'MALPARIDO', type: 'feat', album: 'Amor Fiado (Zeballos)', collabs: ['Zeballos'] },
+  // Agregado posteriormente
+  { id: 224, year: 2020, date: '2020-04-27', title: 'LUNA', type: 'feat', album: null, collabs: ['Gallagher'] },
 ];
 
 const ALBUMS_INFO = {
