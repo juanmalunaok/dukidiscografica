@@ -257,6 +257,7 @@ const DUKI_DATA = [
   { id: 229, year: 2020, date: '2020-01-01', title: 'BASURA', type: 'feat', album: null, collabs: ['C.R.O'] },
   { id: 230, year: 2019, date: '2019-01-01', title: 'IMPALA', type: 'feat', album: null, collabs: ['Frijo', 'Santoz'] },
   { id: 231, year: 2025, date: '2025-05-01', title: 'No Confundan', type: 'feat', album: null, collabs: ['Malandro'] },
+  { id: 232, year: 2025, date: '2025-01-01', title: 'Mi Señora', type: 'feat', album: null, collabs: ['Khea', 'La Joaqui'] },
 ];
 
 const ALBUMS_INFO = {
