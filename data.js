@@ -250,6 +250,13 @@ const DUKI_DATA = [
   { id: 223, year: 2026, date: '2026-04-13', title: 'MALPARIDO', type: 'feat', album: 'Amor Fiado (Zeballos)', collabs: ['Zeballos'] },
   // Agregado posteriormente
   { id: 224, year: 2020, date: '2020-04-27', title: 'LUNA', type: 'feat', album: null, collabs: ['Gallagher'] },
+  { id: 225, year: 2019, date: '2019-01-01', title: 'Tussi', type: 'feat', album: null, collabs: ['Marcianos Crew', 'YSY A'] },
+  { id: 226, year: 2018, date: '2018-01-01', title: 'Vuelta a la Luna (Remix)', type: 'feat', album: null, collabs: ['YSY A', 'Neo Pistea'] },
+  { id: 227, year: 2018, date: '2018-01-01', title: 'Ella es una G', type: 'feat', album: null, collabs: ['C.R.O'] },
+  { id: 228, year: 2019, date: '2019-01-01', title: 'COLOMBIANA', type: 'feat', album: null, collabs: ['Marcianos Crew', 'Homer El Mero Mero', 'Neo Pistea'] },
+  { id: 229, year: 2020, date: '2020-01-01', title: 'BASURA', type: 'feat', album: null, collabs: ['C.R.O'] },
+  { id: 230, year: 2019, date: '2019-01-01', title: 'IMPALA', type: 'feat', album: null, collabs: ['Frijo', 'Santoz'] },
+  { id: 231, year: 2025, date: '2025-05-01', title: 'No Confundan', type: 'feat', album: null, collabs: ['Malandro'] },
 ];
 
 const ALBUMS_INFO = {
