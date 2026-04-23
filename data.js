@@ -262,6 +262,7 @@ const DUKI_DATA = [
   { id: 234, year: 2020, date: '2020-01-01', title: '24K', type: 'feat', album: null, collabs: ['Frijo', 'Santoz'] },
   { id: 235, year: 2022, date: '2022-01-01', title: 'DOLCE', type: 'feat', album: null, collabs: ['Young Cister'] },
   { id: 236, year: 2020, date: '2020-01-01', title: 'Cara de Diablo', type: 'feat', album: null, collabs: ['Midel'] },
+  { id: 237, year: 2020, date: '2020-01-01', title: 'PARANOIA', type: 'feat', album: null, collabs: ['Frijo', 'Santoz'] },
 ];
 
 const ALBUMS_INFO = {
