@@ -264,6 +264,7 @@ const DUKI_DATA = [
   { id: 236, year: 2020, date: '2020-01-01', title: 'Cara de Diablo', type: 'feat', album: null, collabs: ['Midel'] },
   { id: 237, year: 2020, date: '2020-01-01', title: 'PARANOIA', type: 'feat', album: null, collabs: ['Frijo', 'Santoz'] },
   { id: 238, year: 2025, date: '2025-01-01', title: 'RCP', type: 'feat', album: null, collabs: ['Tiago PZK'] },
+  { id: 239, year: 2021, date: '2021-01-01', title: 'DAME DINERO', type: 'feat', album: null, collabs: ['Neo Pistea', 'YSY A'] },
 ];
 
 const ALBUMS_INFO = {
