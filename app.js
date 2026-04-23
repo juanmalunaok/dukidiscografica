@@ -79,6 +79,9 @@ function getFilteredTracks() {
       if (!inTitle && !inCollabs && !inAlbum) return false;
     }
     return true;
+  }).sort((a, b) => {
+    if (a.date !== b.date) return b.date.localeCompare(a.date);
+    return b.id - a.id;
   });
 }
 
