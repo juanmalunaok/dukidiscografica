@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DUKI — The Complete Catalog 2016—2026</title>
+  <meta name="description" content="Archivo oficial de la discografía completa de Duki: 223 temas, singles, discos, EPs y colaboraciones." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Grain overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <div class="app">
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="tape-stripe">
+        <div class="tape-track">
+          <span class="tape-text">⚠ DUKI CATALOG ⚠ SSJ RECORDS ⚠ DALE PLAY ⚠ CLASSIFIED ⚠ DUKI CATALOG ⚠ SSJ RECORDS ⚠ DALE PLAY ⚠ CLASSIFIED ⚠ DUKI CATALOG ⚠ SSJ RECORDS ⚠ DALE PLAY ⚠</span>
+          <span class="tape-text" aria-hidden="true">⚠ DUKI CATALOG ⚠ SSJ RECORDS ⚠ DALE PLAY ⚠ CLASSIFIED ⚠ DUKI CATALOG ⚠ SSJ RECORDS ⚠ DALE PLAY ⚠ CLASSIFIED ⚠ DUKI CATALOG ⚠ SSJ RECORDS ⚠ DALE PLAY ⚠</span>
+        </div>
+      </div>
+
+      <div class="container header-inner">
+        <div class="meta-row">
+          <span>EST. 2016 ◆ BUENOS AIRES</span>
+          <span class="hide-mobile">ARCHIVO OFICIAL ◆ SSJ RECORDS</span>
+          <span>REV. 04.2026</span>
+        </div>
+
+        <div class="big-title-wrap">
+          <div class="big-title glitch">DUKI</div>
+          <div class="big-title big-title--ghost" aria-hidden="true">DUKI</div>
+          <div class="sub-title">THE COMPLETE CATALOG ◆ 2016—2026</div>
+        </div>
+
+        <div class="header-bottom">
+          <div class="header-desc">
+            Base de datos completa de <span class="accent-red">223 temas oficiales</span> del rey del trap argentino.
+            Desde <span class="accent-yellow">"No Vendo Trap"</span> (2016) hasta <span class="accent-yellow">"MALPARIDO"</span> con Zeballos (2026).
+            Singles, discos, EPs y todas las colaboraciones.
+          </div>
+          <div class="header-count">
+            <div class="meta-label">ENTRADAS</div>
+            <div class="count-number" id="headerTotal">223</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- VIEW TOGGLE -->
+    <div class="view-toggle">
+      <div class="container toggle-inner">
+        <button class="toggle-btn active" data-view="list">◆ CATÁLOGO</button>
+        <button class="toggle-btn" data-view="stats">◆ STATS</button>
+        <div class="spacer"></div>
+        <div class="meta-counter" id="viewCounter">223/223</div>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <main class="container main-content">
+      <!-- LIST VIEW -->
+      <section id="listView" class="view">
+        <!-- STATS CARDS -->
+        <div class="stat-grid stat-grid--4">
+          <div class="stat-card stat-card--accent">
+            <div class="stat-icon" data-icon="hash"></div>
+            <div class="stat-value accent-red" id="statTotal">0</div>
+            <div class="stat-label">Temas Totales</div>
+            <div class="stat-accent-line"></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" data-icon="disc"></div>
+            <div class="stat-value" id="statAlbums">0</div>
+            <div class="stat-label">Discos / EPs</div>
+            <div class="stat-accent-line"></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" data-icon="users"></div>
+            <div class="stat-value" id="statCollabs">0</div>
+            <div class="stat-label">Colaboradores</div>
+            <div class="stat-accent-line"></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" data-icon="calendar"></div>
+            <div class="stat-value" id="statYears">0</div>
+            <div class="stat-label">Años Activos</div>
+            <div class="stat-accent-line"></div>
+          </div>
+        </div>
+
+        <!-- SEARCH + FILTERS -->
+        <div class="filter-box">
+          <div class="search-row">
+            <span class="search-icon" data-icon="search"></span>
+            <input type="text" id="searchInput" placeholder="BUSCAR TEMA, COLABORADOR, ÁLBUM..." />
+            <button id="searchClear" class="icon-btn hidden" aria-label="Limpiar búsqueda">
+              <span data-icon="x"></span>
+            </button>
+          </div>
+
+          <div class="filter-chips" id="typeFilters">
+            <button class="chip chip--active" data-type="all">TODO</button>
+            <button class="chip" data-type="single">SINGLES</button>
+            <button class="chip" data-type="album">DISCOS</button>
+            <button class="chip" data-type="feat">FEATS</button>
+            <button id="clearAllBtn" class="chip chip--clear hidden">
+              <span data-icon="x"></span> LIMPIAR
+            </button>
+          </div>
+
+          <div id="activeFilters" class="active-filters hidden"></div>
+        </div>
+
+        <!-- TRACK LIST -->
+        <div class="track-list-wrap">
+          <div class="track-list-header">
+            <div class="track-list-title">
+              <span data-icon="flame" class="accent-red-icon"></span>
+              <h2>CATÁLOGO COMPLETO</h2>
+            </div>
+            <div class="meta-counter">ORDENADO POR ID</div>
+          </div>
+          <div id="trackList"></div>
+        </div>
+      </section>
+
+      <!-- STATS VIEW -->
+      <section id="statsView" class="view hidden">
+        <div class="stat-grid stat-grid--4">
+          <div class="stat-card stat-card--accent">
+            <div class="stat-icon" data-icon="hash"></div>
+            <div class="stat-value accent-red" id="statTotal2">0</div>
+            <div class="stat-label">Total Temas</div>
+            <div class="stat-accent-line"></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" data-icon="play"></div>
+            <div class="stat-value" id="statSingles">0</div>
+            <div class="stat-label">Singles Propios</div>
+            <div class="stat-accent-line"></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" data-icon="disc"></div>
+            <div class="stat-value" id="statAlbumTracks">0</div>
+            <div class="stat-label">Tracks de Discos</div>
+            <div class="stat-accent-line"></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" data-icon="star"></div>
+            <div class="stat-value" id="statFeats">0</div>
+            <div class="stat-label">Como Invitado</div>
+            <div class="stat-accent-line"></div>
+          </div>
+        </div>
+
+        <div class="stats-stack">
+          <div class="panel">
+            <div class="panel-header">
+              <h3>◆ LÍNEA DE TIEMPO</h3>
+              <span class="accent-red-icon" data-icon="trending-up"></span>
+            </div>
+            <div class="timeline" id="timeline"></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h3>◆ DISCOGRAFÍA OFICIAL</h3>
+              <span class="accent-red-icon" data-icon="disc"></span>
+            </div>
+            <div class="albums-grid" id="albumsGrid"></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h3>◆ TOP COLABORADORES</h3>
+              <span class="accent-red-icon" data-icon="users"></span>
+            </div>
+            <div class="top-collabs" id="topCollabs"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="tape-stripe">
+        <div class="tape-track">
+          <span class="tape-text">⚠ DUKI CATALOG ⚠ SSJ RECORDS ⚠ DALE PLAY ⚠ CLASSIFIED ⚠ DUKI CATALOG ⚠ SSJ RECORDS ⚠ DALE PLAY ⚠ CLASSIFIED ⚠ DUKI CATALOG ⚠ SSJ RECORDS ⚠ DALE PLAY ⚠</span>
+          <span class="tape-text" aria-hidden="true">⚠ DUKI CATALOG ⚠ SSJ RECORDS ⚠ DALE PLAY ⚠ CLASSIFIED ⚠ DUKI CATALOG ⚠ SSJ RECORDS ⚠ DALE PLAY ⚠ CLASSIFIED ⚠ DUKI CATALOG ⚠ SSJ RECORDS ⚠ DALE PLAY ⚠</span>
+        </div>
+      </div>
+      <div class="container footer-inner">
+        <div class="footer-cell">ARCHIVO OFICIAL ◆ SSJ RECORDS ◆ DALE PLAY</div>
+        <div class="footer-cell footer-cell--center">
+          <span class="accent-yellow-icon" data-icon="crown"></span>
+          <span class="footer-tag">EL REY DEL TRAP ARGENTINO</span>
+        </div>
+        <div class="footer-cell">223 TEMAS ◆ 10 AÑOS</div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- DETAIL MODAL -->
+  <div id="detailModal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-header-left">
+          <span data-icon="skull"></span>
+          <span class="modal-header-text">EXPEDIENTE</span>
+          <span class="modal-header-id" id="modalId">#000</span>
+        </div>
+        <button class="modal-close" id="modalClose" aria-label="Cerrar">
+          <span data-icon="x"></span>
+        </button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="tape-stripe">
+        <div class="tape-track">
+          <span class="tape-text">⚠ DUKI CATALOG ⚠ SSJ RECORDS ⚠ DALE PLAY ⚠ CLASSIFIED ⚠ DUKI CATALOG ⚠ SSJ RECORDS ⚠ DALE PLAY ⚠ CLASSIFIED ⚠ DUKI CATALOG ⚠ SSJ RECORDS ⚠ DALE PLAY ⚠</span>
+          <span class="tape-text" aria-hidden="true">⚠ DUKI CATALOG ⚠ SSJ RECORDS ⚠ DALE PLAY ⚠ CLASSIFIED ⚠ DUKI CATALOG ⚠ SSJ RECORDS ⚠ DALE PLAY ⚠ CLASSIFIED ⚠ DUKI CATALOG ⚠ SSJ RECORDS ⚠ DALE PLAY ⚠</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
