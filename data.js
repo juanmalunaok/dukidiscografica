@@ -260,6 +260,7 @@ const DUKI_DATA = [
   { id: 232, year: 2025, date: '2025-01-01', title: 'Mi Señora', type: 'feat', album: null, collabs: ['Khea', 'La Joaqui'] },
   { id: 233, year: 2020, date: '2020-01-01', title: 'Blood Remix', type: 'feat', album: null, collabs: ['Moonkey', 'Lucho SSJ', 'Recycled J'] },
   { id: 234, year: 2020, date: '2020-01-01', title: '24K', type: 'feat', album: null, collabs: ['Frijo', 'Santoz'] },
+  { id: 235, year: 2022, date: '2022-01-01', title: 'DOLCE', type: 'feat', album: null, collabs: ['Young Cister'] },
 ];
 
 const ALBUMS_INFO = {
