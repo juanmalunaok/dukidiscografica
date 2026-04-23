@@ -258,6 +258,7 @@ const DUKI_DATA = [
   { id: 230, year: 2019, date: '2019-01-01', title: 'IMPALA', type: 'feat', album: null, collabs: ['Frijo', 'Santoz'] },
   { id: 231, year: 2025, date: '2025-05-01', title: 'No Confundan', type: 'feat', album: null, collabs: ['Malandro'] },
   { id: 232, year: 2025, date: '2025-01-01', title: 'Mi Señora', type: 'feat', album: null, collabs: ['Khea', 'La Joaqui'] },
+  { id: 233, year: 2020, date: '2020-01-01', title: 'Blood Remix', type: 'feat', album: null, collabs: ['Moonkey', 'Lucho SSJ', 'Recycled J'] },
 ];
 
 const ALBUMS_INFO = {
