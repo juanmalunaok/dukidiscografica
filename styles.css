@@ -811,6 +811,18 @@ h1, h2, h3, h4 { margin: 0; }
   font-weight: 700;
 }
 
+.footer-credit {
+  text-align: center;
+  padding-bottom: 1.5rem;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: rgba(255,255,255,0.5);
+  font-weight: 700;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 1rem;
+  margin-top: -0.5rem;
+}
+
 /* ==========================================================
    MODAL
 ========================================================== */
