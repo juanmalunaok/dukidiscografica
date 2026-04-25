@@ -604,9 +604,33 @@ function bindEvents() {
 }
 
 // ============================================================
+// POPUP UNA SOLA VEZ: "DUKI TE AMO SI VES ESTO"
+// ============================================================
+function showDukiPopupOnce() {
+  const KEY = 'duki_te_amo_seen_v1';
+  try {
+    if (localStorage.getItem(KEY)) return;
+    localStorage.setItem(KEY, String(Date.now()));
+  } catch (_) {
+    // si localStorage no está disponible, no mostramos para no spamear
+    return;
+  }
+
+  const popup = document.getElementById('dukiPopup');
+  if (!popup) return;
+  popup.classList.remove('hidden');
+
+  setTimeout(() => {
+    popup.classList.add('fading');
+    setTimeout(() => popup.classList.add('hidden'), 500);
+  }, 5000);
+}
+
+// ============================================================
 // INIT
 // ============================================================
 document.addEventListener('DOMContentLoaded', () => {
   bindEvents();
   renderAll();
+  showDukiPopupOnce();
 });
