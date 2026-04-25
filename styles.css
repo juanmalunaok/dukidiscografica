@@ -822,6 +822,14 @@ h1, h2, h3, h4 { margin: 0; }
   padding-top: 1rem;
   margin-top: -0.5rem;
 }
+.footer-credit-link {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.footer-credit-link:hover {
+  border-bottom-color: var(--red);
+}
 
 /* ==========================================================
    MODAL
