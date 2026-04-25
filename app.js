@@ -352,11 +352,11 @@ function renderTopCollabs() {
 // ============================================================
 function renderAlbumsFull() {
   const container = document.getElementById('albumsFullList');
-  // Orden cronológico por fecha del primer track del álbum
+  // Orden cronológico descendente: más reciente primero
   const albumEntries = Object.entries(ALBUMS_INFO).sort((a, b) => {
     const dateA = DUKI_DATA.find((t) => t.album === a[0])?.date || '';
     const dateB = DUKI_DATA.find((t) => t.album === b[0])?.date || '';
-    return dateA.localeCompare(dateB);
+    return dateB.localeCompare(dateA);
   });
 
   container.innerHTML = albumEntries
