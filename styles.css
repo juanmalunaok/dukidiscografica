@@ -335,6 +335,31 @@ h1, h2, h3, h4 { margin: 0; }
   width: 33%;
   background: var(--red);
 }
+.stat-card--clickable {
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.stat-card--clickable:hover {
+  border-color: var(--red);
+  background: rgba(69, 10, 10, 0.4);
+}
+.stat-card--clickable:hover .stat-accent-line {
+  width: 100%;
+  transition: width 0.3s;
+}
+.stat-card-hint {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.75rem;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: rgba(220, 38, 38, 0);
+  font-weight: 900;
+  transition: color 0.2s;
+}
+.stat-card--clickable:hover .stat-card-hint {
+  color: var(--red);
+}
 
 /* ==========================================================
    FILTER BOX

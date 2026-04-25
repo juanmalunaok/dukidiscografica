@@ -580,6 +580,16 @@ function bindEvents() {
     btn.addEventListener('click', () => {
       state.view = btn.dataset.view;
       renderAll();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  // Stat cards clickeables (DISCOS / EPS → vista álbumes)
+  document.querySelectorAll('[data-goto]').forEach((card) => {
+    card.addEventListener('click', () => {
+      state.view = card.dataset.goto;
+      renderAll();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
 
