@@ -55,6 +55,7 @@
     <div class="view-toggle">
       <div class="container toggle-inner">
         <button class="toggle-btn active" data-view="list">◆ CATÁLOGO</button>
+        <button class="toggle-btn" data-view="albums">◆ ÁLBUMES</button>
         <button class="toggle-btn" data-view="stats">◆ STATS</button>
         <div class="spacer"></div>
         <div class="meta-counter" id="viewCounter">281/281</div>
@@ -127,6 +128,18 @@
           </div>
           <div id="trackList"></div>
         </div>
+      </section>
+
+      <!-- ALBUMS VIEW -->
+      <section id="albumsView" class="view hidden">
+        <div class="albums-section-header">
+          <div>
+            <h2 class="albums-section-title">DISCOGRAFÍA OFICIAL</h2>
+            <div class="albums-section-sub">8 PROYECTOS ◆ 2019—2025</div>
+          </div>
+          <span class="accent-red-icon" data-icon="disc"></span>
+        </div>
+        <div id="albumsFullList" class="albums-full-list"></div>
       </section>
 
       <!-- STATS VIEW -->

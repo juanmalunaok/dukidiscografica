@@ -348,6 +348,94 @@ function renderTopCollabs() {
 }
 
 // ============================================================
+// RENDER: ALBUMS FULL VIEW (sección dedicada)
+// ============================================================
+function renderAlbumsFull() {
+  const container = document.getElementById('albumsFullList');
+  // Orden cronológico por fecha del primer track del álbum
+  const albumEntries = Object.entries(ALBUMS_INFO).sort((a, b) => {
+    const dateA = DUKI_DATA.find((t) => t.album === a[0])?.date || '';
+    const dateB = DUKI_DATA.find((t) => t.album === b[0])?.date || '';
+    return dateA.localeCompare(dateB);
+  });
+
+  container.innerHTML = albumEntries
+    .map(([name, info]) => {
+      const tracks = DUKI_DATA
+        .filter((t) => t.album === name && t.type === 'album')
+        .sort((a, b) => (a.trackNum || 0) - (b.trackNum || 0));
+      const collabsSet = new Set(tracks.flatMap((t) => t.collabs));
+
+      const tracksHTML = tracks
+        .map((t) => {
+          const num = t.trackNum != null ? String(t.trackNum).padStart(2, '0') : '··';
+          const collabs = t.collabs.length
+            ? `<div class="album-track-collabs"><span class="feat">feat.</span> ${escapeHtml(t.collabs.join(' × '))}</div>`
+            : '';
+          return `
+            <div class="album-track-row" data-id="${t.id}">
+              <div class="album-track-num">${num}</div>
+              <div class="album-track-info">
+                <div class="album-track-title">${escapeHtml(t.title)}</div>
+                ${collabs}
+              </div>
+              <div class="album-track-id">#${String(t.id).padStart(3, '0')}</div>
+            </div>
+          `;
+        })
+        .join('');
+
+      // Cover: nombre estilizado sobre fondo del color del álbum
+      const initials = name.length <= 4 ? name : name.split(/\s+/).map((w) => w[0]).join('').slice(0, 4);
+
+      return `
+        <div class="album-block" data-album="${escapeHtml(name)}">
+          <div class="album-block-accent" style="background-color: ${info.color};"></div>
+          <div class="album-block-header">
+            <div class="album-block-cover" style="background-color: ${info.color};">${escapeHtml(initials.toUpperCase())}</div>
+            <div class="album-block-info">
+              <div class="album-block-meta">
+                <span class="album-block-type-badge">${escapeHtml(info.type.toUpperCase())}</span>
+                <span class="album-block-date">${escapeHtml(info.date)}</span>
+              </div>
+              <div class="album-block-name">${escapeHtml(name)}</div>
+              <div class="album-block-counts">
+                ${tracks.length} TRACKS
+                <span class="count-divider">◆</span>
+                ${collabsSet.size} COLABORADOR${collabsSet.size === 1 ? '' : 'ES'}
+                <span class="count-divider">◆</span>
+                ${info.year}
+              </div>
+            </div>
+            <div class="album-block-toggle">+</div>
+          </div>
+          <div class="album-block-tracks">
+            ${tracksHTML}
+          </div>
+        </div>
+      `;
+    })
+    .join('');
+
+  // Toggle expand
+  container.querySelectorAll('.album-block-header').forEach((header) => {
+    header.addEventListener('click', () => {
+      header.parentElement.classList.toggle('expanded');
+    });
+  });
+
+  // Click track → modal
+  container.querySelectorAll('.album-track-row').forEach((row) => {
+    row.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const id = Number(row.dataset.id);
+      const track = DUKI_DATA.find((t) => t.id === id);
+      if (track) openModal(track);
+    });
+  });
+}
+
+// ============================================================
 // RENDER: VIEW TOGGLE
 // ============================================================
 function renderView() {
@@ -355,12 +443,16 @@ function renderView() {
     btn.classList.toggle('active', btn.dataset.view === state.view);
   });
   document.getElementById('listView').classList.toggle('hidden', state.view !== 'list');
+  document.getElementById('albumsView').classList.toggle('hidden', state.view !== 'albums');
   document.getElementById('statsView').classList.toggle('hidden', state.view !== 'stats');
 
   if (state.view === 'stats') {
     renderTimeline();
     renderAlbums();
     renderTopCollabs();
+  }
+  if (state.view === 'albums') {
+    renderAlbumsFull();
   }
 }
 
